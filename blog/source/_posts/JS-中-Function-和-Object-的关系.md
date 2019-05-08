@@ -96,3 +96,20 @@ Function.prototype === Function.__proto__ // true
 Object.prototype === Object.__proto__.__proto__ // true
 ```
 好了到此为止，我不该入门前端的...
+
+---
+2019.05.08 更新
+
+引用自 [高能！typeof Function.prototype 引发的先有 Function 还是先有 Object 的探讨](https://segmentfault.com/a/1190000005754797)，看来函数原型并不是由对象原型构造的，下面是浏览器或 Node 在初始化 JavaScript 环境的详细过程：
+
+> 1. 用 C/C++ 构造内部数据结构创建一个 OP 即(Object.prototype)以及初始化其内部属性但不包括行为。
+> 1. 用 C/C++ 构造内部数据结构创建一个 FP 即(Function.prototype)以及初始化其内部属性但不包括行为。
+> 1. 将 FP 的[[Prototype]]指向 OP。
+> 1. 用 C/C++ 构造内部数据结构创建各种内置引用类型。
+> 1. 将各内置引用类型的[[Prototype]]指向 FP。
+> 1. 将 Function 的 prototype 指向 FP。
+> 1. 将 Object 的 prototype 指向 OP。
+> 1. 用 Function 实例化出 OP，FP，以及 Object 的行为并挂载。
+> 1. 用 Object 实例化出除 Object 以及 Function 的其他内置引用类型的 prototype 属性对象。
+> 1. 用 Function 实例化出除Object 以及 Function 的其他内置引用类型的 prototype 属性对象的行为并挂载。
+> 1. 实例化内置对象 Math 以及 Grobal。至此，所有内置类型构建完成。
