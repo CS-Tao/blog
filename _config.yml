@@ -7,7 +7,7 @@ menu:
 
 # SubNav
 subnav:
-  mail: "http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=whucstao@qq.com"
+  mail: "mailto:whucstao@qq.com"
   github: "https://github.com/CS-Tao"
   rss: /atom.xml
   #zhihu: "https://www.zhihu.com/people/tao-chun-sheng-21/activities"
