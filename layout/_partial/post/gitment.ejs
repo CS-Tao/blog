@@ -1,16 +1,35 @@
-<div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//GIS-Hacker.github.io/gitment/css/default.css">
-<script src="//GIS-Hacker.github.io/gitment/js/gitment.browser.min.js"></script>
+<div class="utterances utterances-frame"></div> 
 <script>
-var gitment = new Gitment({
-  id: "<%=page.title%>",
-  owner: '<%=theme.gitment_owner%>',
-  repo: '<%=theme.gitment_repo%>',
-  oauth: {
-    client_id: '<%=theme.gitment_oauth.client_id%>',
-    client_secret: '<%=theme.gitment_oauth.client_secret%>',
-  },
-  proxy: '<%=theme.gitment_proxy%>'
-})
-gitment.render('gitment-ctn')
+// var gitment = new Gitment({
+//   id: "<%=page.title%>",
+//   owner: '<%=theme.gitment_owner%>',
+//   repo: '<%=theme.gitment_repo%>',
+//   oauth: {
+//     client_id: '<%=theme.gitment_oauth.client_id%>',
+//     client_secret: '<%=theme.gitment_oauth.client_secret%>',
+//   },
+//   proxy: '<%=theme.gitment_proxy%>'
+// })
+// gitment.render('gitment-ctn')
 </script>
+<script src="https://utteranc.es/client.js"
+  repo="GIS-Hacker/CS-Tao.github.io-comments"
+  issue-term="title"
+  label="gitment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script>
+<style>
+.utterances {
+  width: auto;
+  max-width: initial;
+  margin: 0 30px;
+}
+.utterances-frame {
+  position: relative;
+}
+.timeline-comment .comment {
+  border: 1px solid #d1d5da;
+}
+</style>
