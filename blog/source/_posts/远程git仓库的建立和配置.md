@@ -4,7 +4,7 @@ date: 2017-12-11 17:11:21
 categories: 技术相关
 tags: [git, gitweb]
 ---
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/others/gi2.png" width="20%" height="20%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/others/gi2.png" width="20%" height="20%">
 
 本文主要介绍如何建立远程 git 仓库以及如何在 gitweb 页面中显示仓库的描述信息，以 Ubuntu 16.04 LTS 操作系统为例。
 <!-- more -->

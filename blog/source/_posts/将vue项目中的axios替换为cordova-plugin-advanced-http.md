@@ -5,7 +5,7 @@ categories: 技术相关
 tags: [Vue, cordova]
 reward: true
 ---
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/others/cordova-vue.png" width="20%" height="20%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/others/cordova-vue.png" width="20%" height="20%">
 
 对于 Vue 项目，官方建议的网络请求工具是 Axios，但在 Vue 项目和 cordova 集成的时候，我发现想要更改网络请求的 header 并不是一件很简单的事(比如修改 User-Agent)，cordova 对 Axios 发出的请求似乎还添加了一层封装。为了修改 User-Agent，不得已最后还是使用了 cordova 自己的 http 插件：[cordova-plugin-advanced-http](https://github.com/sfelipegp/cordova-plugin-advanced-http).<br/>不难发现 Axios 是使用的 Promise 实现异步网络请求，而 cordova-plugin-advanced-http 使用的却是函数回调。所以实现这个转换最关键问题其实是如何将函数回调替换为 Promise.
 <!-- more -->

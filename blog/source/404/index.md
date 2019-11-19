@@ -57,7 +57,7 @@ permalink: /404
 ***
 
 <div class="pic">
-<img name="github_icon" src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/github.png" alt="404" title="404">
+<img name="github_icon" src="http://home.cs-tao.cc/github-content/contents/blog/image/github.png" alt="404" title="404">
 </div>
 
 <p class="center">很抱歉，您所访问的页面并不存在 </p>

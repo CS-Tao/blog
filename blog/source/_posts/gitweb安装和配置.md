@@ -4,7 +4,7 @@ date: 2017-10-19 15:35:55
 categories: 技术相关
 tags: [gitweb, Apache]
 ---
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/others/gitweb.png" width="20%" height="20%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/others/gitweb.png" width="20%" height="20%">
 
 Apache 环境下的 gitweb 的安装和配置。
 <!-- more -->

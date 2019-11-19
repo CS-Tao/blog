@@ -5,7 +5,7 @@ categories: 技术相关
 tags: [GraphQL]
 toc: true
 ---
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/graphql.png" width="45%" height="45%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/graphql.png" width="45%" height="45%">
 
 # 缘起
 

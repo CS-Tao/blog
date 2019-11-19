@@ -5,7 +5,7 @@ categories: 技术相关
 tags: [JacaScript]
 reward: true
 ---
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/others/javascript.png" width="65%" height="65%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/others/javascript.png" width="65%" height="65%">
 
 > js 的世界很大，并不是只有对象
 
@@ -56,7 +56,7 @@ Object == Function // false
 
 通过对 JavaScript 各个概念出现先后顺序的分析，我得到了如下的一张图：
 
-![Js_Function_Object.png](https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/others/Js_Function_Object.png)
+![Js_Function_Object.png](http://home.cs-tao.cc/github-content/contents/blog/image/others/Js_Function_Object.png)
 
 毫无疑问 JavaScript 是我学过的最糟糕的语言...
 

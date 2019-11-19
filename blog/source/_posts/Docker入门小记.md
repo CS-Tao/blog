@@ -5,7 +5,7 @@ categories: 技术相关
 tags: [docker]
 toc: true
 ---
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker.png" width="45%" height="45%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker.png" width="45%" height="45%">
 
 原本是准备寒假在家学习 Docker 的，但很无奈的是，回到家的我完全不知道如何写下新年的第一段代码。<br/>说来也巧，回到学校后，由于某些不可抗力，搁置已久的消防项目又得开始了，原来负责服务器端 Docker 部署的某大神学长外出实习，重新部署 Docker 服务的任务就落在了我的头上(无奈.jpg)。<br/>我原本是不准备记录下这篇文章的，但是当我写完了 Dockerfile，向服务器部署的时候发现，这次部署可能需要 —— 三个小时？一个人在图书馆坐着，像看剧一样地看着命令终端不断输出完成进度，实在无聊，就想着把最近两天学到的知识记录一下吧。
 <!-- more -->
@@ -159,91 +159,91 @@ Namespace（命名空间）机制是 Linux 为我们提供的用于分离进程�
 
 容器和镜像的大概关系可以参考下图：
 
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/container.png" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/container.png" width="85%" height="85%">
 如图，镜像是分层的文件，每一层都是只读的，其分层的方式类似于 git 的版本控制方式，除了最底层，每一层都会有它的父层，每一层都记录了和上一层的差异(diff)，而容器则是在顶层运行的一个可读写层。
 
 现在，我们可以通过特定的命令来了解一下它们之间的关系。
 
 - `sudo docker create <image-id>`
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/create.jpg" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/create.jpg" width="85%" height="85%">
 `docker create`命令为指定的镜像(image)添加了一个可读写层，构成了一个新的容器，但这个容器并没有运行。
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/create1.png" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/create1.png" width="85%" height="85%">
 
 - `sudo docker start <container-id>`
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/start.jpg" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/start.jpg" width="85%" height="85%">
 `Docker start`命令为容器文件系统创建了一个进程隔离空间。注意，每一个容器只能够有一个进程隔离空间。
 
 - `sudo docker run <image-id>`
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/run.jpg" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/run.jpg" width="85%" height="85%">
 我们可以看到`docker start`命令和`docker run`命令都生成了容器，它们有什么区别呢？
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/start1.png" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/start1.png" width="85%" height="85%">
 从图片可以看出，`docker run`命令先是利用镜像创建了一个容器，然后运行这个容器。
 
 - `sudo docker ps`
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/ps.jpg" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/ps.jpg" width="85%" height="85%">
 `docker ps`命令会列出所有运行中的容器。这隐藏了非运行态容器的存在，如果想要找出这些容器，我们需要使用下面这个命令。
 
 - `sudo docker ps –a`
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/psa.jpg" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/psa.jpg" width="85%" height="85%">
 `docker ps –a`命令会列出所有的容器，不管是运行的，还是停止的。
 
 - `sudo docker images`
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/images.jpg" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/images.jpg" width="85%" height="85%">
 `docker images`命令会列出了所有顶层(top-level)镜像。
 
 - `sudo docker images –a`
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/imagesa.jpg" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/imagesa.jpg" width="85%" height="85%">
 `docker images –a`命令列出了所有的镜像，也可以说是列出了所有的可读层。如果你想要查看某一个 image-id 下的所有层，可以使用`docker history`来查看。
 
 - `sudo docker stop <container-id>`
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/stop.jpg" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/stop.jpg" width="85%" height="85%">
 `docker stop`命令会向运行中的容器发送一个 SIGTERM 的信号，然后停止所有的进程。
 
 - `sudo docker kill <container-id>`
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/kill.jpg" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/kill.jpg" width="85%" height="85%">
 `docker kill`命令向所有运行在容器中的进程发送了一个不友好的 SIGKILL 信号。
 
 - `sudo docker pause <container-id>`
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/pause.jpg" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/pause.jpg" width="85%" height="85%">
 `docker stop`和`docker kill`命令会发送 UNIX 的信号给运行中的进程，`docker pause`命令则不一样，它利用了 cgroups 的特性将运行中的进程空间暂停。但是这种方式的不足之处在于发送一个 SIGTSTP 信号对于进程来说不够简单易懂，以至于不能够让所有进程暂停。
 
 - `sudo docker rm <container-id>`
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/rm.jpg" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/rm.jpg" width="85%" height="85%">
 `docker rm`命令会移除构成容器的可读写层。注意，这个命令只能对非运行态容器执行。
 
 - `sudo docker rmi <image-id>`
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/rmi.jpg" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/rmi.jpg" width="85%" height="85%">
 `docker rmi`命令会移除构成镜像的一个只读层。你只能够使用`docker rmi`来移除最顶层(top level layer)(也可以说是镜像)，你也可以使用 -f 参数来强制删除中间的只读层。
 
 - `sudo docker commit <container-id>`
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/commit.jpg" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/commit.jpg" width="85%" height="85%">
 `docker commit`命令将容器的可读写层转换为一个只读层，这样就把一个容器转换成了不可变的镜像。
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/commit1.png" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/commit1.png" width="85%" height="85%">
 
 - `sudo docker build`
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/build.jpg" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/build.jpg" width="85%" height="85%">
 `docker build`命令它会反复的执行多个命令，如下图
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/build1.png" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/build1.png" width="85%" height="85%">
 `docker build`命令根据 Dockerfile 文件中的 FROM 指令获取到镜像，然后重复地 1) `run(create和start)`、2) `修改`、3) `commit`。在循环中的每一步都会生成一个新的层，因此许多新的层会被创建。
 
 - `sudo docker exec <running-container-id>`
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/exec.jpg" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/exec.jpg" width="85%" height="85%">
 `docker exec`命令会在运行中的容器执行一个新进程。
 
 - `sudo docker inspect <container-id> or <image-id>`
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/inspect.jpg" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/inspect.jpg" width="85%" height="85%">
 `docker inspect`命令会提取出容器或者镜像最顶层的元数据。
 
 - `sudo docker save <image-id>`
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/save.jpg" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/save.jpg" width="85%" height="85%">
 `docker save`命令会创建一个镜像的压缩文件，这个文件能够在另外一个主机的 Docker 上使用。和 export 命令不同，这个命令为每一个层都保存了它们的元数据。这个命令只能对镜像生效。
 
 - `sudo docker export <container-id>`
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/export.jpg" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/export.jpg" width="85%" height="85%">
 `docker export`命令创建一个tar文件，并且移除了元数据和不必要的层，将多个层整合成了一个层，只保存了当前统一视角看到的内容
 
 - `sudo docker history <image-id>`
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/docker/history.jpg" width="85%" height="85%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/docker/history.jpg" width="85%" height="85%">
 `docker history`命令递归地输出指定镜像的历史镜像。
 
 ### 参考文章

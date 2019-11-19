@@ -4,7 +4,7 @@ date: 2017-10-18 08:21:15
 categories: 技术相关
 tags: [C#]
 ---
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/others/mail.png" width="20%" height="20%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/others/mail.png" width="20%" height="20%">
 
 本文记录了在 C# 环境下，如何利用 SMTP 邮箱服务发送邮件，以 QQ 邮箱为例
 <!-- more -->
@@ -93,4 +93,4 @@ namespace View_Spot_of_City.UIControls.Helper
 - 打开 QQ 邮箱网页版
 - 点击左上角"设置"，并在导航栏中点击账户标签
 - 开启 SMTP 服务并获得许可码
-    ![开启 SMTP 服务](https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/WpfSendMail.png)
+    ![开启 SMTP 服务](http://home.cs-tao.cc/github-content/contents/blog/image/WpfSendMail.png)

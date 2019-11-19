@@ -4,7 +4,7 @@ date: 2017-08-19 16:42:23
 categories: 软件开发
 tags: [Wpf, GMap.net]
 ---
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/others/gmap.png" width="20%" height="20%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/others/gmap.png" width="20%" height="20%">
 
 本文记录了利用 GMap.net for WPF 绘制点线面的方式和在项目中遇到的对未指定长宽的要素与其他要素间相对定位的方式
 <!-- more -->
@@ -185,14 +185,14 @@ tags: [Wpf, GMap.net]
     }
     ```
     效果如下：
-    ![软件截屏](https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/GMap-Wpf-Draw-Circle.png)<br>
+    ![软件截屏](http://home.cs-tao.cc/github-content/contents/blog/image/GMap-Wpf-Draw-Circle.png)<br>
     因为投影问题，说好的圆变为了椭圆，如果想生成正圆，可以在程序中使用一些 WebAPI 服务替换 GMap 的投影服务，我们项目使用的是搭建在自己服务器上的的 GeoServer 服务。效果如下：
-    ![软件截屏](https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/FGIS-Damage-Circle.png)<br>
+    ![软件截屏](http://home.cs-tao.cc/github-content/contents/blog/image/FGIS-Damage-Circle.png)<br>
 
 ## 未指定长宽的要素与其他要素间相对定位的方式
 
 在使用 GMap 添加要素的时候，遇到需要对要素添加 Tooltip，但不能指定 Tooltip 的长宽，且该要素与 Tooltip 需要水平中心对其，试过很多办法都不能成功，因为 wpf 控件的 ActualWidth 和 ActualHeight 属性必须加载过一次才能有正确的属性值，也就是说如果根据长宽计算 GMapMarker 的偏移量，Tolltip 在第一次显示的时候无法正确定位，经过探索，最终利用 wpf 控件的 SizeChanged 响应函数实现了该效果。效果如下：<br>
-![软件截屏](https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/GMap-Tooltip.png)
+![软件截屏](http://home.cs-tao.cc/github-content/contents/blog/image/GMap-Tooltip.png)
 
 ```C#
 public void AddIconWithTooltip(PointLatLng pll, Uri iconUri, string tooltip)

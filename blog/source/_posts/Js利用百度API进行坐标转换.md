@@ -4,7 +4,7 @@ date: 2017-09-04 21:10:59
 categories: 技术相关
 tags: [JacaScript]
 ---
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/others/baidu-map.png" width="20%" height="20%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/others/baidu-map.png" width="20%" height="20%">
 
 在 JavaScript 中利用百度地图API对地理坐标系和投影坐标系(墨卡托)进行互转
 <!-- more -->

@@ -5,7 +5,7 @@ categories: 技术相关
 tags: [travis-ci, cordava, android]
 reward: true
 ---
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/others/26.png" width="45%" height="45%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/others/26.png" width="45%" height="45%">
 
 前些时间心血来潮，开发了一款针对武汉大学图书馆预约系统的桌面端抢座软件(使用 Electron + Vue 搭建)，发布之后，有很多同学向我反映说想要 Android 版本的。
 

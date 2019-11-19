@@ -6,7 +6,7 @@ tags: [github-oauth]
 toc: true
 reward: true
 ---
-<img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/others/05.jpg" width="65%" height="65%">
+<img src="http://home.cs-tao.cc/github-content/contents/blog/image/others/05.jpg" width="65%" height="65%">
 
 OAuth (开放授权 Open Authorization) 是一个开放标准，允许用户授权第三方应用访问他们存储在另外的服务提供者上的信息，而不需要将用户名和密码提供给第三方应用或分享他们数据的所有内容。
 但 GitHub OAuth 对桌面端的认证并没有直接的支持，本文提供了一种利用浏览器的缓存功能实现的针对桌面端 (移动端也适用) 的 GitHub OAuth 第三方登录方式，并提供了一个实例 (通过 Express.js 和 socket-io.js 搭建)。
@@ -41,7 +41,7 @@ GitHub 提供了针对网站的第三方登录策略，主要步骤如下：
 
 解决了第二个问题，第一个问题中区分每个客户端的问题也就解决了，接下来要做的是实现把浏览器和客户端一一对应起来，现在浏览器的缓存技术(缓存客户端和服务器连接的 Socket id)终于可以派上用场了，步骤如下：
 
-![工作流](https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/others/github-oauth-flow.png)
+![工作流](http://home.cs-tao.cc/github-content/contents/blog/image/others/github-oauth-flow.png)
 
 1. 客户端主动建立 Socket 连接，得到 Socket id
 1. 将 Socket id 和其他必要的参数 (比如区分是否是移动端的参数) 嵌入到一个让用户确认是否继续认证的链接中，打开浏览器访问该链接，这个网页需要做的工作是在用户点击确认后，把 Socket id 和其他参数存到本地缓存中，然后访问认证链接
@@ -68,34 +68,34 @@ GitHub 提供了针对网站的第三方登录策略，主要步骤如下：
 
 1. 点击软件下方的**钥匙**进入软件授权页面(第一次打开软件会默认进入本页面)
 
-  ![图片加载失败](https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/github/whu-library-seat/OAuth/1.png)
+  ![图片加载失败](http://home.cs-tao.cc/github-content/contents/github/whu-library-seat/OAuth/1.png)
 
 1. 点击`GitHub Star 永久授权`按钮，软件会打开系统浏览器访问认证页面
 
-  ![图片加载失败](https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/github/whu-library-seat/OAuth/3.png)
+  ![图片加载失败](http://home.cs-tao.cc/github-content/contents/github/whu-library-seat/OAuth/3.png)
 
 1. 点击`确定通过 GitHub 账号登录`，此时 GitHub 会让你确认是否授权(如果没有登录 GitHub，此时会进入登录页面)
 
-  ![图片加载失败](https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/github/whu-library-seat/OAuth/4.png)
+  ![图片加载失败](http://home.cs-tao.cc/github-content/contents/github/whu-library-seat/OAuth/4.png)
 
 1. 点击`Authorize CS-Tao`即可成功登录
 
-  ![图片加载失败](https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/github/whu-library-seat/OAuth/5.png)
+  ![图片加载失败](http://home.cs-tao.cc/github-content/contents/github/whu-library-seat/OAuth/5.png)
 
 1. 登录成功后返回软件，如果出现下面的弹窗，说明您还未对本仓库点星，请进行下一步
 
-  ![图片加载失败](https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/github/whu-library-seat/OAuth/5.1.png)
+  ![图片加载失败](http://home.cs-tao.cc/github-content/contents/github/whu-library-seat/OAuth/5.1.png)
 
 1. 如果您还未给本仓库点星，请到指定仓库点星以供管理员了解软件使用情况。桌面端进入：[whu-library-seat](https://github.com/CS-Tao/whu-library-seat)，移动端进入：[whu-library-seat-mobile](https://github.com/CS-Tao/whu-library-seat-mobile)
 
   - 桌面端点击右上角的`Star`按钮，按钮如下图所示：
 
-    ![图片加载失败](https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/github/whu-library-seat/OAuth/5.2.png)
+    ![图片加载失败](http://home.cs-tao.cc/github-content/contents/github/whu-library-seat/OAuth/5.2.png)
 
   - 移动端需要登录才会显示`Star`按钮，登录状态下直接点击即可，按钮如下图所示：
   
-    ![图片加载失败](https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/github/whu-library-seat/OAuth/5.3.png)
+    ![图片加载失败](http://home.cs-tao.cc/github-content/contents/github/whu-library-seat/OAuth/5.3.png)
 
 1. 点星后回到本软件，点击确定即可
 
-  ![图片加载失败](https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/github/whu-library-seat/OAuth/6.png)
+  ![图片加载失败](http://home.cs-tao.cc/github-content/contents/github/whu-library-seat/OAuth/6.png)
