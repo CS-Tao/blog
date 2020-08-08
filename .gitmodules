@@ -1,3 +1,4 @@
-[submodule "blog/themes/hexo-theme-yilia"]
-	path = blog/themes/hexo-theme-yilia
+[submodule "themes/hexo-theme-yilia"]
+	path = themes/hexo-theme-yilia
 	url = https://github.com/CS-Tao/blog.git
+	branch = hexo-theme-yilia

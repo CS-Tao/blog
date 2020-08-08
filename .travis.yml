@@ -1,4 +1,3 @@
-
 language: node_js
 node_js: 8
 
@@ -10,8 +9,8 @@ install:
   - yarn --cwd blog
 
 script:
-  - npm install -g hexo
-  - hexo --cwd blog g
+  - cd blog
+  - yarn build
 
 deploy:
   provider: pages
