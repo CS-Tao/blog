@@ -10,10 +10,15 @@ jobs:
     name: Build and deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Build
-        uses: heowc/action-hexo@master
+      - name: Install
+        uses: borales/actions-yarn@v2.0.0
         with:
-          args: generate
+          cmd: install
+
+      - name: Build
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
