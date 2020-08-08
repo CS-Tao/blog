@@ -32,3 +32,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           force_orphan: true
+
+      - name: Archive blog artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: blog-site-files
+          path: public
