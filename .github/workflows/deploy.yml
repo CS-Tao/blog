@@ -1,21 +1,22 @@
 name: Hexo runner
 
-on: push
-  branches:
-    - source
+on:
+  push:
+    branches:
+      - source
 
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - name: Build
-      uses: heowc/action-hexo@master
-      with:
-        args: generate
+      - name: Build
+        uses: heowc/action-hexo@master
+        with:
+          args: generate
 
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
