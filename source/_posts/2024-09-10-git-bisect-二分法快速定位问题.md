@@ -111,7 +111,7 @@ reward: true
    │ o [5cd65c0fd7ee8309d6ddec38e232eeae19f93a03] chore: 发布正式版本
    ```
 
-   继续检查当前提交是否正常，如果正常，则执行 `git bisect good`，如果不正常，则执行 `git bisect bad`，直至找到首个有问题的提交为止
+   继续检查当前提交是否正常，如果正常，则执行 `git bisect good`，如果不正常，则执行 `git bisect bad`，直至找到首个有问题的提交。
 
    > 每次检查当前提交是否正常之前需要执行一些准备命令确保外部依赖被正确安装。比如前端项目中一般需要执行 `npm install` 命令来更新依赖
 
