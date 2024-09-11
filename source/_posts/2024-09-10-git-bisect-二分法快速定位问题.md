@@ -115,7 +115,7 @@ reward: true
 
    > 每次检查当前提交是否正常之前需要执行一些准备命令确保外部依赖被正确安装。比如前端项目中一般需要执行 `npm install` 命令来更新依赖
 
-1. 标记当前提交 `79a20e29636178e33479ec35cd23101b4080a6aa` 是有问题的
+1. 对当前提交 `79a20e29636178e33479ec35cd23101b4080a6aa` 进行测试，标记当前提交是有问题的
 
    ```bash
    ❯ git bisect bad
@@ -147,7 +147,9 @@ reward: true
    │ o [5cd65c0fd7ee8309d6ddec38e232eeae19f93a03] chore: 发布正式版本
    ```
 
-1. 标记当前提交 `f11d08852b7fb0ef7e9d16056280edac5a772d57` 是正常的
+   命令执行后，git 自动切换到了 `f11d08852b7fb0ef7e9d16056280edac5a772d57` 提交。
+
+1. 对当前提交 `f11d08852b7fb0ef7e9d16056280edac5a772d57` 进行测试，标记当前提交是正常的
 
    ```bash
    ❯ git bisect good
@@ -179,7 +181,9 @@ reward: true
    │ o [5cd65c0fd7ee8309d6ddec38e232eeae19f93a03] chore: 发布正式版本
    ```
 
-1. 标记当前提交 `782c1fa6852522d5db16cfff88c7051c2ac0bf09` 是正常的
+   命令执行后，git 自动切换到了 `782c1fa6852522d5db16cfff88c7051c2ac0bf09` 提交。
+
+1. 对当前提交 `782c1fa6852522d5db16cfff88c7051c2ac0bf09` 进行测试，标记当前提交是正常的
 
    ```bash
    ❯ git bisect good
@@ -211,7 +215,9 @@ reward: true
    │ o [5cd65c0fd7ee8309d6ddec38e232eeae19f93a03] chore: 发布正式版本
    ```
 
-1. 标记当前提交 `fbdc27d4498e4d27828e8b7037d68c73f272878d` 是有问题的
+   命令执行后，git 自动切换到了 `fbdc27d4498e4d27828e8b7037d68c73f272878d` 提交。
+
+1. 对当前提交 `fbdc27d4498e4d27828e8b7037d68c73f272878d` 进行测试，标记当前提交是有问题的
 
    ```bash
    ❯ git bisect bad
@@ -243,7 +249,9 @@ reward: true
    │ o [5cd65c0fd7ee8309d6ddec38e232eeae19f93a03] chore: 发布正式版本
    ```
 
-1. 标记当前提交 `83900f6d009f0158dfce0fccc241b2fa013d1743` 是正常的
+   命令执行后，git 自动切换到了 `83900f6d009f0158dfce0fccc241b2fa013d1743` 提交。
+
+1. 对当前提交 `83900f6d009f0158dfce0fccc241b2fa013d1743` 进行测试，标记当前提交是正常的
 
    ```bash
    ❯ git bisect good
