@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "hexo server",
     "build": "hexo generate",
-    "clean": "hexo clean"
+    "clean": "hexo clean",
+    "new": "hexo new"
   },
   "dependencies": {
     "hexo": "^3.7.1",
