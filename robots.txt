@@ -1,0 +1,14 @@
+# hexo robots.txt
+User-agent: *
+
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /fancybox/
+Disallow: /gallery/
+Disallow: /categories/
+
+Sitemap: http://cs-tao.github.io/sitemap.xml
+Sitemap: http://cs-tao.github.io/baidusitemap.xml
+Sitemap: http://cs-tao.github.io/atom.xml
